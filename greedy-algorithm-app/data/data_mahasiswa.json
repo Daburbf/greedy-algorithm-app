@@ -1,0 +1,17 @@
+[
+    {"nama": "Aisyah Putri",   "nim": "120531", "prodi": "Informatika", "ipk": 3.95, "ukt": 3500000},
+    {"nama": "Budi Santoso",   "nim": "120612", "prodi": "Elektro",     "ipk": 3.90, "ukt": 3000000},
+    {"nama": "Clarissa Rahma", "nim": "120755", "prodi": "Kimia",       "ipk": 3.88, "ukt": 4000000},
+    {"nama": "David Lee",      "nim": "120890", "prodi": "Hukum",       "ipk": 3.85, "ukt": 2500000},
+    {"nama": "Eka Fitria",     "nim": "120901", "prodi": "Biologi",     "ipk": 3.80, "ukt": 5000000},
+    {"nama": "Fahmi Reza",     "nim": "121010", "prodi": "Geografi",    "ipk": 3.75, "ukt": 4200000},
+    {"nama": "Ghea Amalia",    "nim": "121111", "prodi": "Akuntansi",   "ipk": 3.70, "ukt": 3800000},
+    {"nama": "Hendra Wijaya",  "nim": "121212", "prodi": "Manajemen",   "ipk": 3.65, "ukt": 2800000},
+    {"nama": "Intan Permata",  "nim": "121313", "prodi": "Sastra",      "ipk": 3.60, "ukt": 3100000},
+    {"nama": "Joko Prayitno",  "nim": "121414", "prodi": "Fisika",      "ipk": 3.55, "ukt": 4500000},
+    {"nama": "Kartika Dewi",   "nim": "121515", "prodi": "Matematika",  "ipk": 3.45, "ukt": 2900000},
+    {"nama": "Lukman Hakim",   "nim": "121616", "prodi": "Teknik Sipil","ipk": 3.40, "ukt": 3300000},
+    {"nama": "Maya Sari",      "nim": "121717", "prodi": "Psikologi",   "ipk": 3.35, "ukt": 4100000},
+    {"nama": "Nanda Putra",    "nim": "121818", "prodi": "Farmasi",     "ipk": 3.20, "ukt": 5200000},
+    {"nama": "Olivia Tan",     "nim": "121919", "prodi": "Arsitektur",  "ipk": 3.10, "ukt": 6000000}
+]

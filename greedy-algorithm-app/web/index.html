@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Seleksi Beasiswa by Kelompok 10 Use Greedy Algorithm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 flex h-screen overflow-hidden">
+
+<aside class="w-80 bg-white border-r border-slate-200 p-6 flex flex-col gap-5 overflow-y-auto shadow-sm">
+    <div class="flex items-center gap-3 mb-4">
+        <div class="bg-blue-600 p-2 rounded-lg text-white shadow-md shadow-blue-200">
+            <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h1 class="text-xl font-bold tracking-tight text-slate-800">Seleksi Beasiswa</h1>
+    </div>
+
+    <div class="space-y-4">
+        <div>
+            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Kapasitas Kuota</label>
+            <input id="in_kuota" type="number" value="10" class="w-full mt-1 p-2 bg-slate-50 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 font-bold transition-all">
+        </div>
+        <div>
+            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Minimal IPK</label>
+            <input id="in_min_ipk" type="number" step="0.1" value="3.5" class="w-full mt-1 p-2 bg-slate-50 border border-slate-200 rounded-lg outline-none font-bold">
+        </div>
+        <div>
+            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Maksimal UKT (Rp)</label>
+            <input id="in_max_ukt" type="number" value="5000000" class="w-full mt-1 p-2 bg-slate-50 border border-slate-200 rounded-lg outline-none font-bold">
+        </div>
+        <div>
+            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Dana Anggaran (Rp)</label>
+            <input id="in_anggaran" type="number" value="50000000" class="w-full mt-1 p-2 bg-slate-50 border border-slate-200 rounded-lg outline-none font-bold">
+        </div>
+        <div>
+            <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Bobot IPK: <span id="val_bobot" class="text-blue-600">60%</span></label>
+            <input id="in_bobot" type="range" min="0" max="100" value="60" class="w-full mt-2 accent-blue-600">
+        </div>
+    </div>
+
+    <button onclick="prosesSeleksi()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-blue-100 active:scale-95">
+        <i class="fas fa-play mr-2"></i> Jalankan Seleksi
+    </button>
+
+    <hr class="border-slate-100">
+
+    <div class="grid grid-cols-1 gap-2">
+        <button onclick="importData()" class="text-left p-3 hover:bg-blue-50 rounded-lg text-sm font-semibold text-slate-600 group transition-all">
+            <i class="fas fa-file-import mr-2 text-blue-500 group-hover:scale-110 transition-transform"></i> Import Data JSON
+        </button>
+        <button onclick="eksporCSV()" class="text-left p-3 hover:bg-emerald-50 rounded-lg text-sm font-semibold text-slate-600 group transition-all">
+            <i class="fas fa-file-csv mr-2 text-emerald-500 group-hover:scale-110 transition-transform"></i> Ekspor ke CSV
+        </button>
+        <button onclick="unduhTXT()" class="text-left p-3 hover:bg-orange-50 rounded-lg text-sm font-semibold text-slate-600 group transition-all">
+            <i class="fas fa-file-alt mr-2 text-orange-500 group-hover:scale-110 transition-transform"></i> Unduh Laporan (.txt)
+        </button>
+    </div>
+</aside>
+
+<main class="flex-1 p-8 overflow-y-auto">
+    <header class="flex justify-between items-start mb-6">
+        <div>
+            <h2 class="text-2xl font-bold text-slate-800 tracking-tight">Hasil Seleksi Greedy</h2>
+            <p id="info_kandidat" class="text-slate-500 text-sm mt-1">Sistem siap memproses data...</p>
+        </div>
+        <div id="status_badge" class="bg-slate-200 text-slate-500 px-5 py-2.5 rounded-full font-bold text-[10px] uppercase tracking-widest shadow-sm">
+            Menunggu Input
+        </div>
+    </header>
+
+    <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead class="bg-slate-50 text-[10px] uppercase font-black text-slate-400 border-b border-slate-100">
+                <tr>
+                    <th class="px-6 py-5">Rank</th>
+                    <th class="px-6 py-5">Mahasiswa</th>
+                    <th class="px-6 py-5">NIM</th>
+                    <th class="px-6 py-5">Instansi</th>
+                    <th class="px-6 py-5">Prodi</th>
+                    <th class="px-6 py-5 text-center">IPK</th>
+                    <th class="px-6 py-5">UKT (Rp)</th>
+                    <th class="px-6 py-5 text-center">Skor</th>
+                    <th class="px-6 py-5 text-center">Status</th>
+                </tr>
+                </thead>
+                <tbody id="table_body" class="text-sm">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
